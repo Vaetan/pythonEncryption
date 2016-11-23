@@ -9,9 +9,10 @@ for line in lines:
     # print line
     if "Proc-Type" in line:
         print("Password required...")
-        userPass = raw_input("Please enter password: ")
+        # userPass = raw_input("Please enter password: ")
         break
 
 f.seek(0,0)
 
-key = RSA.importKey(f.read(), passphrase=userPass)
+key = RSA.importKey(f.read(), passphrase="password")
+print("Key read successful. Storing it in a safe place...")
